@@ -76,3 +76,34 @@ INSERT INTO product (code, name, brand, description, unit_price, quantity, is_ac
 VALUES ('PRDMNO123PQRX', ' Macbook Pro', 'apple', 'This is one of the best laptops available in the market right now!', 54000, 3, true, 1, 2, 0, 0 );
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('PRDABCXYZDEFX', 'Dell Latitude E6510', 'dell', 'This is one of the best laptop series from dell that can be used!', 48000, 5, true, 1, 3, 0, 0 );
+
+
+
+
+
+
+--Review table
+CREATE TABLE productreview(
+
+id IDENTITY,
+username varchar(50),
+productId INT,
+categoryId INT,
+productReview varchar(255),
+CONSTRAINT fk_review_categoryId FOREIGN KEY (categoryId) REFERENCES category(id),
+CONSTRAINT fk_review_productId FOREIGN KEY (productId) REFERENCES product(id)
+);
+
+CREATE TABLE cart_line (
+	id int not null AUTO INCREAMENT,
+	cart_id int,
+	total DECIMAL(10,2),
+	product_id int,
+	product_count int,
+	buying_price DECIMAL(10,2),
+	is_available boolean,
+	foreign key (product_id) references product(id),
+foreign key (cart_id) references cart(id),
+primary key(id)
+	
+);

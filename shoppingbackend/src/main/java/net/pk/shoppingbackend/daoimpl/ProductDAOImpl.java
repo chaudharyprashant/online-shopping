@@ -18,6 +18,8 @@ public class ProductDAOImpl implements ProductDAO{
 	@Override
 	public Product get(int productId) {
 		try{
+			System.out.println("inside get");
+			System.out.println(productId);
 		return sessionFactory.getCurrentSession().get(Product.class,Integer.valueOf(productId));
 		}
 		catch(Exception ex)
