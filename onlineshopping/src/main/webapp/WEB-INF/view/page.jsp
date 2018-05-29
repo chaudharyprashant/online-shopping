@@ -20,6 +20,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+<meta name="_csrf" content="${_csrf.token}">
+<meta name="_csrf_header" content="${_csrf.headerName}">
 
 <title>Online Shopping -${title}</title>
 
@@ -35,10 +37,14 @@
 <link href="${css}/bootstrap-theme.css" rel="stylesheet">
 <!-- bootstrap datatable theme -->
 <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
-
+<script src="${js}/negative.js"></script>
+<script src="${js}/positive.js"></script>
+<script src="${js}/PorterStemmer1980.min.js"></script>
+<script src="${js}/bayes.js"></script>
+<script src="${js}/afinn.js"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -78,6 +84,20 @@
 			<c:if test="${userClickShowProduct == true}">
 				<%@include file="singleProduct.jsp"%>
 			</c:if>
+			<!-- loads only when user want to show all reviews of a product -->
+			<c:if test="${userClickShowReviews== true}">
+				<%@include file="AllReviews.jsp"%>
+			</c:if>
+			<!-- loads only when user click manage products -->
+			<c:if test="${userClickManageProducts== true}">
+				<%@include file="manageProducts.jsp"%>
+			</c:if>
+			<!-- loads only when user click show cart -->
+			<c:if test="${userClickShowCart== true}">
+				<%@include file="cart.jsp"%>
+			</c:if>
+			
+	
 			
 		</div>
 		<!-- footer comes here -->
@@ -97,6 +117,9 @@
 
 		<!--DataTable bootstrap script-->
 		<script src="${js}/dataTables.bootstrap.js"></script>
+		
+			<!--bootbox-->
+		<script src="${js}/bootbox.min.js"></script>
 
 		<!-- self coded javascript -->
 		<script src="${js}/myapp.js"></script>

@@ -1,8 +1,4 @@
-/*!
- * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+
 html {
 	height: 100%;
 }
@@ -77,3 +73,140 @@ footer {
 	width:100px;
 	height:100px;
 }
+.help-block{
+	color:red;
+}
+.adminDataTableImg{
+	height:50px;
+	width:50px;
+}
+.switch{
+	width:50px;
+	height:30px;
+	position:relative;
+	display:inline-block;
+}
+.switch input{
+	display:none;
+}
+.slider{
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	cursor:pointer;
+	background-color:#ccc;
+	border-radius:30px;
+	transition:.5s;
+}
+.slider:before{
+	position:absolute;
+	background-color:#fff;
+	height:20px;
+	width:20px;
+	content:"";
+	left:5px;
+	bottom:5px;
+	border-radius:50%;
+	transition:.5s;
+}
+input:checked + .slider{
+	background-color:#1863E6;
+}
+input:checked + .slider:before{
+	transform:translateX(20px);	
+}
+
+/*cart css/
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control{
+		width:20%;
+		display: inline !important;
+	}
+	.actions .btn{
+		width:36%;
+		margin:1.5em 0;
+	}
+	
+	.actions .btn-info{
+		float:left;
+	}
+	.actions .btn-danger{
+		float:right;
+	}
+	
+	table#cart thead { display: none; }
+	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+	table#cart tbody tr td:first-child { background: #333; color: #fff; }
+	table#cart tbody td:before {
+		content: attr(data-th); font-weight: bold;
+		display: inline-block; width: 8rem;
+	}
+	
+	
+	
+	table#cart tfoot td{display:block; }
+	table#cart tfoot td .btn{display:block;}
+	
+}
+
+
+
+.cartImg{
+	
+	width:100px;
+	height:100px;
+}
+
+.unavailable{
+	color:red;
+}
+
+
+/* cart checkout */
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+
+/* order receipt */
+.invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+
+
+/* landing css */
+
+.landingImg {
+	width: auto;
+	height : 180px;
+}
+
+
+.se-pre-con{
+		position:fixed;
+		left:0;
+		top:0;
+		width:98%;
+		height:100%;
+		z-index:9999;
+		background:url(../images/pre-loader.gif) 50% no-repeat #fff
+}
+
+
+
